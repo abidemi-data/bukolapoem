@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Bukola</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=Jost:wght@300;400&display=swap">
+<style>
+:root{--h:340;--cream:#fbeee6;--soft:#d9bfc0;--gold:#f2c98a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--cream);font-family:"Jost",system-ui,sans-serif;font-weight:300;background:#1a1020;overflow-x:hidden}
+.bg{position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 20% 10%,hsl(var(--h),55%,28%) 0,transparent 55%),radial-gradient(ellipse at 85% 90%,hsl(calc(var(--h) + 50),50%,24%) 0,transparent 55%),linear-gradient(160deg,#1d1026,#2b1428 60%,#1a1020);transition:background 1.6s}
+.orb{position:fixed;z-index:-1;border-radius:50%;filter:blur(70px);opacity:.35;animation:drift 18s ease-in-out infinite alternate}
+.o1{width:340px;height:340px;background:hsl(var(--h),70%,55%);top:-80px;left:-80px}
+.o2{width:300px;height:300px;background:hsl(calc(var(--h) + 60),70%,55%);bottom:-60px;right:-60px;animation-delay:-6s}
+@keyframes drift{to{transform:translate(60px,40px) scale(1.2)}}
+canvas{position:fixed;inset:0;z-index:-1;pointer-events:none}
+main{max-width:640px;margin:0 auto;padding:70px 24px 100px}
+.page{animation:fade 1.1s ease both;text-align:center}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.serif,h1,h2{font-family:"Cormorant Garamond",Georgia,serif}
+.kicker{letter-spacing:.35em;text-transform:uppercase;font-size:.72rem;color:var(--gold);margin-bottom:18px}
+h1{font-weight:300;font-size:clamp(3rem,13vw,5.2rem);line-height:1;margin:.1em 0 .3em}
+h1 em{font-style:italic;color:var(--gold)}
+h2{font-weight:500;font-style:italic;font-size:clamp(2rem,8vw,2.8rem);margin:.2em 0 1em;color:var(--gold)}
+.lead{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:1.35rem;line-height:1.6;color:var(--soft);margin:0 auto 2.2em;max-width:30ch}
+.btn{display:inline-block;margin:6px;padding:15px 32px;border-radius:999px;border:1px solid rgba(242,201,138,.6);background:rgba(242,201,138,.12);backdrop-filter:blur(10px);color:var(--cream);font:inherit;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;cursor:pointer;text-decoration:none;transition:.4s}
+.btn:hover{background:var(--gold);color:#2b1428;box-shadow:0 0 30px rgba(242,201,138,.4)}
+.solid{background:var(--gold);color:#2b1428}
+.env{width:150px;height:100px;margin:0 auto 38px;position:relative;border-radius:6px;background:linear-gradient(145deg,#f6dcc9,#e9b9a8);box-shadow:0 20px 50px rgba(0,0,0,.45),0 0 60px rgba(242,201,138,.25);animation:float 4s ease-in-out infinite}
+.env:before{content:"";position:absolute;inset:0;clip-path:polygon(0 0,50% 58%,100% 0);background:#f0c9b6;border-radius:6px}
+.env:after{content:"♥";position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);color:#b2475a;font-size:1.3rem}
+@keyframes float{50%{transform:translateY(-12px)}}
+.card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:26px;padding:42px 26px;box-shadow:0 30px 70px rgba(0,0,0,.35);margin-bottom:30px}
+.lines p{margin:0;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.25rem,4.6vw,1.5rem);line-height:1.85;opacity:0;animation:fade 1.6s ease forwards}
+.lines p.gap{margin-top:1.1em}
+.sig{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;color:var(--gold);font-size:1.3rem;margin-top:1.6em;opacity:0;animation:fade 1.6s ease forwards}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px;margin-top:2.4em;text-align:left}
+.tile{display:block;padding:22px 20px;border-radius:20px;text-decoration:none;color:var(--cream);background:linear-gradient(145deg,hsla(var(--c),60%,60%,.22),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.12);transition:.4s;min-height:118px}
+.tile:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.tile b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.05rem;color:var(--gold);font-weight:500;margin-bottom:10px}
+.tile span{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.3rem;line-height:1.2;font-style:italic}
+#snd{position:fixed;top:calc(env(safe-area-inset-top,0px) + 14px);right:14px;z-index:5;padding:9px 16px;font-size:.7rem}
+</style>
+</head>
+<body>
+<div class="bg"></div><div class="orb o1"></div><div class="orb o2"></div><canvas id="fx"></canvas>
+<button class="btn" id="snd">♪ Sound off</button>
+<main id="app"></main>
+<script>
+const FROM="Abidemi";
+const LETTER="Dear Bukola,|I know you weren't expecting this.|I know work has been hard on you lately,|a roller coaster of pressure, deadlines and long days|that hardly lets you breathe.|*I miss you, Bukola, more than I can say.|I miss your laugh, your voice, the way you brighten a room|without even trying.|You are on my mind a lot these days,|and I am thinking of you with so much care.|I can't be there beside you yet, but I am with you.|You can trust me on that.|Whatever you face, you don't face it alone,|and I will be your calm, your cheering, your safe place.|*Hear me, Bukola. You are one solid woman.|You are not where you are by accident.|You are here because you deserve it,|and if anyone can carry this, it is you.|*I know you have got this.|I know the plan for your life is a plan of good,|not of evil, to give you a future and a hope.|Don't forget that. Hold on to it.|*So I made you a quiet place to rest,|full of words that believe in you.|Everything will be perfectly fine, in time.|Take your time here.";
+const P=[
+["You Will Be Fine","I cannot sit beside you tonight,|so I am sending these words in my place.|Listen closely, Bukola, because I mean this:|you will be fine.|Not in some far and foggy someday,|but the way mornings arrive,|a little earlier each time.|The work is heavy, yes, and the days are long,|and I will not pretend they are not.|But you were never made of glass.|You were made of laughter and stubborn light,|of quiet strength you rarely brag about,|and nothing that has tried to dim you has won.|Not the deadlines, not the doubt, not the noise.|I am with you, even from far away.|I always have been, and I always will be."],
+["Though I Am Far","Distance is just a number on a map,|and I have never trusted maps to tell the truth.|The truth is I am in every room you walk into,|a quiet shadow of cheering behind your shoulder.|When the phone lights up and the pressure speaks,|when the evening drags its feet,|lean back a little. You will find me there.|Not in body, not yet,|but in the thread that keeps us tied,|the one no schedule and no mile can cut.|I think of you in the small hours,|between one thought and the next,|and every time I whisper, she is going to be okay.|So when the day feels too wide to cross,|trust me, Bukola.|I am holding the other end."],
+["The Roller Coaster","Work has been a roller coaster, I know:|the climbs that steal your breath,|the drops that leave your stomach somewhere behind,|the sharp turns no one warned you about.|You have screamed, you have gripped the bar,|you have wondered when it would ever slow.|But listen, every ride has an end,|a gentle slope, a slowing down,|a platform where your feet touch steady ground.|You will step off laughing, hair a mess,|and say, I survived that? I did.|And the people who love you will be waiting there,|arms open, already proud.|Hold on, Bukola. Breathe through the drop.|The best part of the ride is still ahead."],
+["The Girl Who Laughs","Somewhere under all this weariness|lives the girl who laughs too loud in public places,|who turns a bad day into a story worth telling,|who makes a whole room lighter by being in it.|She has not gone anywhere.|She is only resting between the storms,|gathering her mischief like a bright coat.|Soon she will be back, eyes shining,|ready to tease me about something ridiculous,|and we will laugh about these months|as a heavy bag she once carried and put down.|Until then I am keeping her laugh safe,|saving a seat for it right beside me,|and I will not let anyone convince me|it has gone for good."],
+["Lanterns","Your words are lanterns you have been hanging|on every dark corner of your life.|You never noticed how many there were|until the night got long enough to need them.|Look at the road behind you, the one you walked|when you thought you had nothing left.|See how it glows. See how far you came.|Every hard season, every closed door,|every morning you got up anyway,|became another small light along the way.|A person who can light a path like that|is never truly lost.|So keep walking. Keep writing.|When your own light feels low,|I will carry one of your lanterns beside you."],
+["I Miss You","I miss you in the ordinary hours,|in the beat after a joke where you would laugh,|in the empty space beside every story I tell.|I miss your voice saying nothing important|and somehow everything that mattered.|I miss your smile most of all,|the one that arrives before the words do.|You are on my mind in the quiet moments,|and I am thinking of you with so much care,|wishing every hard thing would go easy on you.|Missing you is only love|that has not found a chair yet.|So I send it ahead, across the miles,|folded small inside this poem: I am here."],
+["Rest Is Not Surrender","Rest is not giving up, my friend.|The field lies quiet in the winter,|and still, beneath the frost,|every seed is rehearsing spring.|You are allowed to be tired.|You are allowed to put the weight down,|to switch off the phone, close your eyes,|and breathe like nobody is waiting.|The world will not fall if you pause.|It will only wait for you,|the way a good friend waits at a door.|And you will come back softer, wiser, brighter,|with a little more of yourself intact.|Rest. Spring is already on its way to you."],
+["What the River Knows","The river does not ask the rocks|why they have blocked its way.|It bends, it hums, it finds another path,|and the rocks become the reason it sings.|You are the river, Bukola.|Every impossible deadline, every heavy week|is only teaching you a new way to flow.|There will be days you feel slow and muddy|and wonder if you are going anywhere at all.|You are. You always are.|Ahead of you, patient and wide,|the sea is waiting with open arms.|You will get there, not by force,|not by being perfect,|but by being exactly who you are."],
+["A Letter Across the Distance","Dear you, I hope this finds you softly.|I hope you have eaten something warm today.|I hope that somewhere near your heart|you can feel a hand that is not there|holding yours the way it always would.|You can trust me with the heavy things,|the tears, the tiredness, the days that make no sense.|I will not flinch. I will not leave.|You do not have to be the strong one with me.|You can be tired, quiet, unsure,|and still be exactly enough.|Whatever tomorrow carries toward you,|we will meet it together,|even if together is only a thought across the sea,|and a friend who is always on your side."],
+["Morning Will Come","Even the longest night|has never once refused the dawn.|Hold on to that gently,|the way you hold a favourite line of verse.|The light is already getting dressed|somewhere behind the hills,|pulling on its gold, tying its shoes.|It is coming for you, Bukola,|with warm hands and a whole new day.|Every worry that kept you up|will look smaller in that light.|Every knot in your chest will loosen.|You will open the window and breathe,|and the world will feel like it belongs to you again."],
+["Poet's Hands","You have the hands of someone|who turns pain into poetry,|who takes the heaviest things|and shapes them into something carriable.|That gift has not left you.|Not under the pressure, not under the noise.|It waits in your chest like a small bright coal.|Blow on it gently. Let it catch.|When the world is too loud, write one line.|Just one. It does not have to be good.|It only has to be true.|It will remind you who you are,|and what you have always been able to do:|take a hard day and make it beautiful.|I have always admired that about you."],
+["Held","You are held by more than you know:|by the friends who think of you at odd hours,|by the words you have given the world,|by the older you who already made it through|and leans back across time to whisper, keep going.|You are held by every prayer that carries your name,|by every small kindness you ever planted|that is quietly growing back toward you.|You are held by me,|from here, in this small and stubborn way,|in the only language I have tonight.|Whenever the night makes you feel alone,|remember this poem has your name on it.|You are never as alone as you think."],
+["Slow Mending","Healing is not a straight line.|It is a slow stitching, some days a single thread.|But thread by thread the torn thing|becomes whole again,|and stronger in the very place it was mended.|Do not rush it. Do not judge it.|Let the days do their gentle work.|Some mornings you will feel behind.|Some evenings you will feel like you are starting over.|That is allowed. That is part of it.|One morning you will wake up lighter|and not know exactly when it happened.|That is how the best healing arrives,|quietly, like warmth through a window."],
+["Not By Accident","You are not here by accident, Bukola.|You are not here by luck, or by chance,|or because someone forgot to check the door.|You are here because you earned it,|because you worked, and doubted, and worked again.|Every seat at every table you have sat in|had your name on it before you arrived.|And if there is anyone who can carry this,|if there is anyone who can see it through,|it is you, and it has always been you.|I know you have got this.|I know it the way I know your voice.|So when the doubt comes knocking,|tell it you have a plan,|and a friend who believes in it,|and a future that is already waiting."],
+["Plans of Good","There is a plan for your life, Bukola,|and it is a plan of good, not of evil,|a plan to give you a future and a hope.|Do not forget that on the hard days.|The plan has not been cancelled by pressure.|It has not been erased by a bad week,|or by a heavy season, or by a tired heart.|It is quietly unfolding,|even now, even when you cannot see it,|like a seed turning toward the sun underground.|One day you will look back and understand|why it had to be this way.|Until then, hold on, and keep your faith soft.|Everything is going to be fine,|perfectly, wonderfully, in its own good time.|I am with you until then, and after."]
+];
+const app=document.getElementById("app"),bg=document.documentElement;
+let seen=[],cur=-1;
+function rnd(){let a=P.map((_,i)=>i).filter(i=>i!==cur&&!seen.includes(i));if(!a.length){seen=[];a=P.map((_,i)=>i).filter(i=>i!==cur)}return a[Math.floor(Math.random()*a.length)]}
+function lines(txt,step){let d=0;return txt.split("|").map(l=>{const g=l[0]==="*";if(g)l=l.slice(1);const h=`<p class="${g?"gap":""}" style="animation-delay:${(d+=step).toFixed(1)}s">${l}</p>`;return h}).join("")+`<div class="sig" style="animation-delay:${(txt.split("|").length*step+.8).toFixed(1)}s">With love, ${FROM}</div>`}
+function hue(h){document.documentElement.style.setProperty("--h",h)}
+function go(){const r=location.hash;scrollTo(0,0);
+ if(r==="#/letter"){hue(345);app.innerHTML=`<section class="page"><div class="kicker">A letter</div><div class="card lines">${lines(LETTER,1.1)}</div><a class="btn solid" href="#/poems">Read your poems</a></section>`;return}
+ if(r==="#/poems"){hue(330);app.innerHTML=`<section class="page"><div class="kicker">Fifteen poems</div><h1>For <em>You</em></h1><p class="lead">Choose one, or let a poem find you.</p><a class="btn solid" href="#/poem/${rnd()}">Surprise me</a><a class="btn" href="#/letter">Re-read the letter</a><div class="grid">${P.map((p,i)=>`<a class="tile" style="--c:${i*24}" href="#/poem/${i}"><b>${String(i+1).padStart(2,"0")}</b><span>${p[0]}</span></a>`).join("")}</div></section>`;return}
+ if(r.startsWith("#/poem/")&&P[+r.slice(7)]){const i=+r.slice(7);cur=i;if(!seen.includes(i))seen.push(i);hue(i*24);
+  app.innerHTML=`<section class="page"><div class="kicker">Poem ${i+1} of ${P.length}</div><h2>${P[i][0]}</h2><div class="card lines">${lines(P[i][1],.9)}</div><a class="btn solid" href="#/poem/${rnd()}">Another poem</a><a class="btn" href="#/poems">All poems</a></section>`;return}
+ hue(340);app.innerHTML=`<section class="page" style="padding-top:8vh"><div class="env"></div><div class="kicker">Made only for you</div><h1>Bukola</h1><p class="lead">Something small, to remind you that you are never alone.</p><a class="btn solid" href="#/letter">Open</a></section>`}
+addEventListener("hashchange",go);go();
+/* fireflies */
+const cv=document.getElementById("fx"),cx=cv.getContext("2d");let W,H;const F=[];
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener("resize",rs);
+for(let i=0;i<45;i++)F.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*2+.6,v:Math.random()*.3+.1,p:Math.random()*6,s:Math.random()*.02+.01});
+(function t(){cx.clearRect(0,0,W,H);F.forEach(f=>{f.y-=f.v;f.x+=Math.sin(f.p)*.3;f.p+=f.s;if(f.y<-5){f.y=H+5;f.x=Math.random()*W}
+ const a=.25+.45*Math.sin(f.p*2)**2;cx.beginPath();cx.fillStyle=`rgba(242,201,138,${a})`;cx.shadowColor="#f2c98a";cx.shadowBlur=12;cx.arc(f.x,f.y,f.r,0,7);cx.fill()});requestAnimationFrame(t)})();
+/* emotional music: slow piano + string pad + reverb */
+let ctx,master,wet,timer,on=false,step=0,auto=true;const btn=document.getElementById("snd");
+const mf=n=>440*2**((n-69)/12);
+const CH=[{p:[45,57,60,64],a:[69,72,76,81,76,72,64,72]},{p:[41,53,57,60],a:[65,69,72,77,72,69,60,69]},{p:[48,55,60,64],a:[67,72,76,79,76,72,64,72]},{p:[43,55,59,62],a:[67,71,74,79,74,71,62,71]}];
+function build(){ctx=new(window.AudioContext||window.webkitAudioContext)();master=ctx.createGain();master.gain.value=0;
+ const c=ctx.createDynamicsCompressor();master.connect(c);c.connect(ctx.destination);
+ const len=ctx.sampleRate*4.5,ir=ctx.createBuffer(2,len,ctx.sampleRate);
+ for(let ch=0;ch<2;ch++){const d=ir.getChannelData(ch);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*(1-i/len)**3}
+ const cv2=ctx.createConvolver();cv2.buffer=ir;wet=ctx.createGain();wet.gain.value=.8;wet.connect(cv2);cv2.connect(master)}
+function out(n){n.connect(master);n.connect(wet)}
+function piano(m,v,t){const f=mf(m),g=ctx.createGain(),o=ctx.createOscillator(),o2=ctx.createOscillator(),g2=ctx.createGain();
+ o.type="sine";o.frequency.value=f;o2.type="triangle";o2.frequency.value=f*2;g2.gain.value=.1;
+ g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.05);g.gain.exponentialRampToValueAtTime(.0008,t+4);
+ o.connect(g);o2.connect(g2);g2.connect(g);out(g);o.start(t);o2.start(t);o.stop(t+4.2);o2.stop(t+4.2)}
+function pad(ch,t,dur){const lp=ctx.createBiquadFilter();lp.type="lowpass";lp.frequency.value=450;
+ ch.p.forEach(m=>[-7,7].forEach(dt=>{const o=ctx.createOscillator(),g=ctx.createGain();o.type="sawtooth";o.frequency.value=mf(m);o.detune.value=dt;
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.012,t+1.2);g.gain.setValueAtTime(.012,t+dur-.5);g.gain.linearRampToValueAtTime(0,t+dur+2.5);
+  o.connect(g);g.connect(lp);o.start(t);o.stop(t+dur+2.6)}));out(lp)}
+function tick(){if(!on)return;const t=ctx.currentTime+.05,ch=CH[Math.floor(step/8)%4],k=step%8;
+ if(k===0){pad(ch,t,7.6);piano(ch.p[0],.06,t)}
+ if(Math.random()>.12)piano(ch.a[k],.045+Math.random()*.03,t+Math.random()*.04);
+ if(k===4&&Math.random()>.4)piano(ch.a[2]+12,.03,t+.4);
+ step++;timer=setTimeout(tick,950)}
+function set(v){on=v;btn.textContent="♪ Sound "+(on?"on":"off");
+ if(on){if(!ctx)build();ctx.resume();master.gain.cancelScheduledValues(ctx.currentTime);master.gain.linearRampToValueAtTime(.38,ctx.currentTime+.4);clearTimeout(timer);tick()}
+ else if(ctx){clearTimeout(timer);master.gain.cancelScheduledValues(ctx.currentTime);master.gain.linearRampToValueAtTime(0,ctx.currentTime+1.5)}}
+btn.onclick=e=>{e.stopPropagation();auto=false;set(!on)};
+addEventListener("pointerdown",e=>{if(auto&&!e.target.closest("#snd")){auto=false;if(!on)set(true)}});
+</script>
+</body>
+</html>
